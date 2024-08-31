@@ -1,0 +1,21 @@
+{% extends 'Mi_Aplicacion/padre.html' %}
+
+{% block ContenidoQueCambia %}
+<h2>Buscar Canciones</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados de la búsqueda:</h3>
+    <ul>
+        {% for cancion in resultados %}
+            <li>{{ cancion.titulo }} - {{ cancion.album.titulo }}</li>
+        {% empty %}
+            <li>No se encontraron resultados.</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

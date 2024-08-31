@@ -1,0 +1,14 @@
+{% extends "Mi_Aplicacion/padre.html" %}
+
+{% block ContenidoQueCambia %}
+<section class="page-section" id="Artistas">
+    <div class="container">
+        <h2>Agregar Nuevo Artista</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ miFormulario.as_p }}
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</section>
+{% endblock %}

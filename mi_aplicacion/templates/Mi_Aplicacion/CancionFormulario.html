@@ -1,0 +1,10 @@
+{% extends 'Mi_Aplicacion/padre.html' %}
+
+{% block ContenidoQueCambia %}
+  <h2>Agregar Nueva Canción</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ miFormulario.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}
